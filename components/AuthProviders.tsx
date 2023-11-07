@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { getProviders, signIn } from 'next-auth/react'
-import Button from './Button';
+import Button from './ui/Button';
 
 
 type Provider = {
@@ -22,7 +22,6 @@ const AuthProviders = () => {
     useEffect(() => {
         const fetchProviders = async () => {
             const res = await getProviders();
-            console.log(res, 'resresres')
             setProviders(res);
         }
 

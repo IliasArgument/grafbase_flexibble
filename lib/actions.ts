@@ -1,10 +1,6 @@
 import { ProjectForm } from "@/common.types";
 import { getUserQuery, createUserMutation, createProjectMutation, updateProjectMutation, deleteProjectMutation, projectsQuery, getProjectByIdQuery, getProjectsOfUserQuery, projectsAllQuery } from "@/graphql";
-import { trace } from "console";
 import { GraphQLClient } from "graphql-request";
-
-// import { createProjectMutation, createUserMutation, deleteProjectMutation, updateProjectMutation, getProjectByIdQuery, getProjectsOfUserQuery, getUserQuery, projectsQuery } from "@/graphql";
-// import { ProjectForm } from "@/common.types";
 
 const isProduction = process.env.NODE_ENV === 'production';
 const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : 'http://127.0.0.1:4000/graphql';
@@ -17,7 +13,6 @@ const makeGraphQLRequest = async (query: string, variables = {}) => {
     try {
         return await client.request(query, variables);
     } catch (err) {
-        console.log('erre grapg', err)
         throw err;
     }
 };

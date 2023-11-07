@@ -8,7 +8,6 @@ import ProfileMenu from "./ProfileMenu";
 
 const Navbar = async () => {
     const session = await getCurrentUser()
-console.log(session, 'session')
     return (
         <nav className="flexBetween navbar">
             <div className="flex-1 flexStart gap-10">
@@ -23,14 +22,12 @@ console.log(session, 'session')
                 <ul className="xl:flex hidden text-small gap-7">
                     {
                         NavLinks.map((link) => (
-                            // <li key={link.key}>
                             <Link
                                 href={link.href}
                                 key={link.key}
                             >
                                 {link.text}
                             </Link>
-                            // </li> 
                         ))
                     }
                 </ul>

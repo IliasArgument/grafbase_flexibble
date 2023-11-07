@@ -3,8 +3,8 @@ import Link from "next/link"
 
 import { getCurrentUser } from "@/lib/session"
 import { getProjectDetails } from "@/lib/actions"
-import Modal from "@/components/Modal"
-import ProjectActions from "@/components/ProjectActions"
+import Modal from "@/components/ui/Modal"
+import ProjectActions from "@/components/ui/ProjectActions"
 import RelatedProjects from "@/components/RelatedProjects"
 import { ProjectInterface } from "@/common.types"
 

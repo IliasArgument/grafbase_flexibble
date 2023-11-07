@@ -23,7 +23,6 @@ const LoadMore = ({
 
     const handleNavigation = (type: string) => {
         const currentParams = new URLSearchParams(window.location.search);
-        console.log(currentParams, 'currentParams')
 
         if (type === "prev" && hasPreviousPage) {
             currentParams.delete("endcursor");

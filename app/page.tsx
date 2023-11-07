@@ -1,9 +1,7 @@
 import { ProjectInterface } from "@/common.types";
-import Categories from "@/components/Categories";
-import LoadMore from "@/components/LoadMore";
-// import Categories from "@/components/Categories";
-// import LoadMore from "@/components/LoadMore";
-import ProjectCard from "@/components/ProjectCard";
+import Categories from "@/components/ui/Categories";
+import LoadMore from "@/components/ui/LoadMore";
+import ProjectCard from "@/components/ui/ProjectCard";
 import { fetchAllProjects } from "@/lib/actions";
 
 type SearchParams = {
@@ -33,10 +31,8 @@ export const revalidate = 0;
 
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
     const data = await fetchAllProjects(category, endcursor) as ProjectSearch
-    
-    const projectsToDisplay = data?.projectSearch?.edges || [];
-    console.log(projectsToDisplay, 'datadatadatadata')
 
+    const projectsToDisplay = data?.projectSearch?.edges || [];
     if (projectsToDisplay.length === 0) {
         return (
             <section className="flexStart flex-col paddings">
@@ -50,7 +46,6 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
     return (
         <section className="flexStart flex-col paddings mb-16">
             <Categories />
-
             <section className="projects-grid">
                 {projectsToDisplay.map(({ node }: { node: ProjectInterface }) => (
                     <ProjectCard

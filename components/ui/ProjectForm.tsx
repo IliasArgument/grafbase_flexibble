@@ -22,7 +22,6 @@ type Props = {
 
 const ProjectForm = ({ type, session, project }: Props) => {
     const router = useRouter()
-    console.log(project, 'project')
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [form, setForm] = useState<FormState>({
         title: project?.title || "",
@@ -83,7 +82,6 @@ const ProjectForm = ({ type, session, project }: Props) => {
 
         } catch (error) {
             alert(`Failed to ${type === "create" ? "create" : "edit"} a project. Try again!`);
-            console.log(error, 'thewo')
         } finally {
             setSubmitting(false)
         }
