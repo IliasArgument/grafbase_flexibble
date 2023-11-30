@@ -14,6 +14,10 @@ body {
   font-family: Inter;
 }
 
+input {
+  outline: none;
+}
+
 .flexCenter {
   @apply flex justify-center items-center;
 }
@@ -54,7 +58,7 @@ body {
 
 /* Project Details */
 .user-actions_section {
-  @apply fixed max-md:hidden flex gap-4 flex-col right-10 top-20;
+  @apply fixed desktop:hidden flex gap-4 flex-col right-10 top-20;
 }
 
 .user-info {
@@ -107,7 +111,7 @@ body {
 }
 
 .footer_copyright {
-  @apply max-sm:flex-col w-full text-sm font-normal;
+  @apply desktop:flex-col w-full text-sm font-normal;
 }
 
 .footer_column {
@@ -163,4 +167,28 @@ body {
 /* Profile Projects */
 .profile_projects {
   @apply grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-5;
+}
+
+/* Escape Project */
+.hero-escape {
+  background-image: url('/escape/hero.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  /* object-fit: contain; */
+  width: 100%;
+  height: 100%;
+}
+
+/* normilize-element */
+
+.normilize-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
